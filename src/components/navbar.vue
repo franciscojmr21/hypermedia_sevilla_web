@@ -4,7 +4,7 @@
       <a href="#" class="navbar-brand">
         <img :src=imgPost() alt="logo">
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#myNav">
         <span class="navbar-icon">
           <svg class="svg-inline--fa fa-bars fa-w-14" aria-hidden="true" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
         </span>
@@ -69,11 +69,7 @@ export default {
             url(url){
               return url;
             }
-        },
-        created () {
-            
         }
-        
 }
 
 
@@ -96,13 +92,6 @@ export default {
   --mainYellow:#e3b505;
 }
 /*navbar*/
-
-.navbar {
-  background: #9c9c9c;
-  padding: 5px 20px;
-  transition: all 1s ease;
-
-}
 
 .navbar-icon{
   font-size: 2rem;
@@ -139,6 +128,8 @@ export default {
 /* navbar */
 .navbar{
   background: var(--mainWhite);
+  padding: 5px 20px;
+  transition: all 1s ease;
 }
 .navbar-toggler{
   outline-color: var(--mainOrange)!important;

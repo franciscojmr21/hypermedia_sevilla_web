@@ -1,8 +1,14 @@
 <template>
-  
+  <html lang="en" class="fontawesome-i2svg-active fontawesome-i2svg-complete">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  </head>
   <body>
-    <Navbar :item1="item1" :item2="item2" :item3="item3" :item4="item4" :item5="item5" :item6="item6" :logo="logo" :social1="social1" 
-    :social2="social2" :social3="social3"></Navbar>
+    <main_header :title="main_title" :title2="main_title2"></main_header>
+    <Navbar id="navbar_top" :item1="item1" :item2="item2" :item3="item3" :item4="item4" :item5="item5" :item6="item6" :logo="logo" :social1="social1" 
+      :social2="social2" :social3="social3"></Navbar>
     <section class="event py-5" id="events">
       <div class="container">
         <div class="row">
@@ -17,12 +23,43 @@
         </div>
       </div>
     </section>
+
+     
+
+     <section class="pointsOfInterest py-5" id="points_of_interest">
+       <div class="container">
+  <div class="row">
+    <PointOfInterest :title="pI_title" :photo="pI_image" ></PointOfInterest>
+    <div class="col-sm-6 d-flex flex-column justify-content-between">
+       <div class="row">
+         <PointOfInterest :title="pI_title" :photo="pI_image" ></PointOfInterest>
+          <PointOfInterest :title="pI_title" :photo="pI_image" ></PointOfInterest>
+       </div>
+     
+       <div class="row">
+         <PointOfInterest :title="pI_title" :photo="pI_image" ></PointOfInterest>
+          <PointOfInterest :title="pI_title" :photo="pI_image" ></PointOfInterest>
+       </div>
+       
+ 
+    </div>
+    
+    </div>
+    </div>
+
+                       
+
+    </section>
   </body>
+  
+  </html>
 </template>
 
 <script>
 import Evento from './components/evento.vue'
+import PointOfInterest from './components/pointOfInterest.vue' //problematic?
 import Navbar from './components/navbar.vue'
+import main_header from './components/main_header.vue'
 
 import e1_photo_ from './assets/Puro Latino.jpeg'
 import e2_photo_ from './assets/cartel-semana-santa-sevilla-2022.jpg'
@@ -34,10 +71,16 @@ export default {
     name: 'App',
     components: {
     Evento,
-    Navbar
+    Navbar,
+    PointOfInterest,
+    main_header
 },
     data: function() {
       return {
+
+        main_title: 'Sevilla',
+        main_title2: 'Has a Special Color',
+
         e1_title: 'Puro Latino',
         e1_title2: 'Festival',
         e1_photo: e1_photo_,
@@ -75,9 +118,25 @@ export default {
         logo: logo, 
         social1: "https://es-la.facebook.com/AyuntamientodeSevilla", 
         social2: "https://twitter.com/sevillaciudad", 
-        social3: "https://www.instagram.com/ayto_sevilla/"
+        social3: "https://www.instagram.com/ayto_sevilla/",
+
+        pI_title: "Plaza de España",
+        pI_image: "https://upload.wikimedia.org/wikipedia/commons/b/b6/Plaza_de_España_%28Sevilla%29_-_01.jpg"
       };
     },
+    created: function(){
+      document.addEventListener("DOMContentLoaded", function(){
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > document.getElementById('navbar_top').offsetTop){
+            document.getElementById('navbar_top').classList.add('fixed-top');
+            document.getElementById('navbar_top').classList.add('navbar-background');
+          } else {
+            document.getElementById('navbar_top').classList.remove('navbar-background');
+            document.getElementById('navbar_top').classList.remove('fixed-top');
+          } 
+        });
+      });
+    }
   };
 
 </script>
@@ -89,6 +148,19 @@ width: 348px;
 height: 386px;
 }
 
+/* div#pointOfInterest1{
+width: 348px;
+height: 386px;
+} */
+
+.col2 {
+    border:2px solid green;
+    width:49%;
+    float:left;
+    height:100%;
+    margin-right:2%;    
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -96,5 +168,9 @@ height: 386px;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.navbar-background {
+  padding: 5px 5px;
 }
 </style>

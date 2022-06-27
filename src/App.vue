@@ -33,6 +33,48 @@
       </div>
     </section>
 
+
+
+   <!-- question section -->
+    <section class="section question py-5">
+  <div class="section question py-5" id="question">
+    <div class="container">
+      <div class="row">
+        <!-- single question first-->
+        <div class="col-10 mx-auto my-2 col-md-6 d-flex justify-content-between question-grey p-4">
+          <!-- first flexbox child -->
+          <!-- <a href="https://www.google.com/search?q=Most+Popular+Restaurants&rlz=1C1CHBF_esES949ES949&oq=Most+Popular+Restaurants&aqs=chrome..69i57j0i512j0i22i30l8.641j0j9&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener noreferrer" class="question-icon mr-3"> -->
+            <i class="fas fa-search fa-fw"></i>
+          <!-- </a> -->
+          <!-- second flexbox child -->
+          <div class="question-text w-75">
+            <h4 class="question-title text-capitalize font-weight-bold">
+                  Most Popular Restaurants
+            </h4>
+            <!-- <p class="question-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam, quis!</p> -->
+          </div>
+        
+        </div>
+        <!-- single question second-->
+        <div class="col-10 mx-auto my-2 col-md-6 d-flex justify-content-between question-yellow p-4">
+          <!-- first flexbox child -->
+         <!-- <a href="https://www.google.com/search?q=Cheapest+Restaurants+sevilla&rlz=1C1CHBF_esES949ES949&oq=Cheapest+Restaurants+&aqs=chrome.0.69i59j69i57j0i457i512j0i22i30l6j0i10i22i30.1911j0j7&sourceid=chrome&ie=UTF-8" target="_blank" rel="noopener noreferrer" class="question-icon mr-3"> -->
+            <i class="fas fa-dollar-sign fa-fw"></i>
+          <!-- </a> -->
+          <!-- second flexbox child -->
+          <div class="question-text w-75">
+            <h4 class="question-title text-capitalize font-weight-bold">
+              Cheapest Restaurants
+            </h4>
+            <!-- <p class="question-info">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ullam, quis!</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!--end of  question section -->
      
 
      <section class="pointsOfInterest py-5" id="points_of_interest">
@@ -444,4 +486,31 @@ height: 386px;
 .navbar-background {
   padding: 5px 5px;
 }
+
+/* question */
+.question{
+  background: url('./assets/comida.jpeg')center/cover fixed no-repeat;
+}
+.question-grey{
+  background: rgba(79,109,122,0.75);
+}
+.question-yellow{
+  background: rgba(227,181,5,0.75);
+}
+.question-icon{
+  font-size: 4rem;
+  color: var(--mainBlue);
+  transition: all 0.5s ease-in-out;
+}
+.question-icon:hover{
+transform: translateY(-10%);
+color: var(--mainBlue);
+}
+.question-info{
+  color:var(--mainWhite);
+}
+
+
+
+
 </style>
